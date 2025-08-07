@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('3.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #ffffffcc;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px black;
+      margin-top: 60px;
+      color: #fff;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #000;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ddd;
+    }
+
+    .content {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      width: 90%;
+      max-width: 1000px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-top: 30px;
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .description {
+      font-size: 18px;
+      margin: 10px 0 30px;
+      color: #f0f0f0;
+    }
+
+    .image-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .image-group img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 2px 2px 10px #000;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #ffcccc;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="nav-button">← Back to Homepage</a>
+
+  <h1>My Blog</h1>
+
+  <div class="button-group">
+    <button onclick="showSection('hobbies')">Hobbies</button>
+    <button onclick="showSection('achievements')">Achievements</button>
+  </div>
+
+  <!-- Hobbies Content -->
+  <div id="hobbies" class="content">
+    <button class="back-button" onclick="hideSection()">← Back</button>
+
+    <div class="section-title">Basketball</div>
+    <div class="description">Playing basketball keeps me active and improves teamwork and discipline.</div>
+    <div class="image-group">
+      <img src="d.jpg" alt="Basketball 1">
+      <img src="e.jpg" alt="Basketball 2">
+      <img src="f.jpg" alt="Basketball 3">
+      <img src="g.jpg" alt="Basketball 4">
+    </div>
+
+    <div class="section-title">Travelling</div>
+    <div class="description">Exploring new places helps me understand different cultures and enjoy nature.</div>
+    <div class="image-group">
+      <img src="c.jpg" alt="Travelling">
+    </div>
+
+    <div class="section-title">Online Games</div>
+    <div class="description">Online gaming sharpens my reflexes and allows me to connect with friends.</div>
+    <div class="image-group">
+      <img src="h.jpg" alt="Mobile Legends">
+      <img src="i.jpg" alt="Honor of Kings">
+      <img src="j.jpg" alt="NBA 2K25">
+    </div>
+  </div>
+
+  <!-- Achievements Content -->
+  <div id="achievements" class="content">
+    <button class="back-button" onclick="hideSection()">← Back</button>
+
+    <div class="section-title">APPS Basketball 3v3</div>
+    <div class="description">Proud to be the champion in the APPS 3v3 basketball tournament!</div>
+    <div class="image-group">
+      <img src="b.jpg" alt="Basketball Achievement">
+    </div>
+  </div>
+
+  <script>
+    function showSection(section) {
+      document.getElementById('hobbies').style.display = 'none';
+      document.getElementById('achievements').style.display = 'none';
+
+      if (section === 'hobbies') {
+        document.body.style.backgroundImage = "url('9.jpg')";
+        document.getElementById('hobbies').style.display = 'block';
+      } else if (section === 'achievements') {
+        document.body.style.backgroundImage = "url('8.jpg')";
+        document.getElementById('achievements').style.display = 'block';
+      }
+    }
+
+    function hideSection() {
+      document.getElementById('hobbies').style.display = 'none';
+      document.getElementById('achievements').style.display = 'none';
+      document.body.style.backgroundImage = "url('3.jpg')";
+    }
+  </script>
+</body>
+</html>
